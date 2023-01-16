@@ -19,9 +19,4 @@ class File:
         with open(fileName + ".text", 'w') as f:
             f.write(text)
 
-"""
-
-print(json.dumps(data, indent=4))
-
-"""
 
