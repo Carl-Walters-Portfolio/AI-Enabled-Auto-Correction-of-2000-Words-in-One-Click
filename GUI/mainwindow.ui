@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1059</width>
-    <height>1008</height>
+    <width>1062</width>
+    <height>960</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -89,7 +89,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>827</x>
-      <y>930</y>
+      <y>880</y>
       <width>201</width>
       <height>61</height>
      </rect>
@@ -123,7 +123,7 @@ color: rgb(255, 255, 255);</string>
       <x>30</x>
       <y>120</y>
       <width>1001</width>
-      <height>791</height>
+      <height>741</height>
      </rect>
     </property>
     <property name="font">
@@ -142,7 +142,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>607</x>
-      <y>930</y>
+      <y>880</y>
       <width>201</width>
       <height>61</height>
      </rect>
@@ -161,7 +161,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>940</y>
+      <y>890</y>
       <width>331</width>
       <height>41</height>
      </rect>
@@ -171,7 +171,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>900</y>
+      <y>850</y>
       <width>1001</width>
       <height>20</height>
      </rect>
@@ -213,7 +213,7 @@ color: rgb(255, 14, 17);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>930</y>
+      <y>880</y>
       <width>201</width>
       <height>61</height>
      </rect>
