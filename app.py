@@ -59,23 +59,68 @@ class MainWindow(QMainWindow):
 
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
+        
+        """change grammar
+        
+        """
         uic.loadUi('GUI/mainwindow.ui', self)
+        
+        self.setWindowTitle("AI-Enabled-Auto-Correction-of-2000-Words-in-One-Click")
+        
+        self.RemoveWhiteSpace = True
+        self.removeWhiteSpaceButton.setStyleSheet("background-color: Green")
         
         self.api = Api()
         self.files = File()
+        
+        self.removeWhiteSpaceButton.pressed.connect(lambda: self.toggleWhiteSpace())
+
         self.sumbitButton_2.pressed.connect(lambda: self.sumbitText())
+        self.sumbitButton_2.setShortcut("Ctrl+f")
+
         self.exportToText.pressed.connect(lambda: self.exportToTextFile())
+        
+        self.setAiContextBox()
+
+    def setAiContextBox(self):
+        self.aiPromptBox.setPlainText("Correct the spelling and grammar of the following text.")
+
+    
+    def toggleWhiteSpace(self):
+        if self.RemoveWhiteSpace == False:
+            self.RemoveWhiteSpace = True
+        elif self.RemoveWhiteSpace == True:
+            self.RemoveWhiteSpace = False
+            
+        if self.RemoveWhiteSpace == False:
+            self.removeWhiteSpaceButton.setStyleSheet("background-color: red")
+        elif self.RemoveWhiteSpace == True:
+            self.removeWhiteSpaceButton.setStyleSheet("background-color: Green")
+
 
     def sumbitText(self):
         self.userInputText.toPlainText()
         userText = str(self.userInputText.toPlainText())
-        corrected = self.api.call(userText)
-        self.userInputText.setPlainText(corrected.strip())
-    
+        
+        aiPromptText = self.aiPromptBox.toPlainText()
+        
+        correctedText = self.api.call(aiPromptText, userText)
+        
+        if self.RemoveWhiteSpace == True:
+            correctedText = correctedText.strip()
+
+        self.userInputText.setPlainText(correctedText)
+        self.copyToClipBoard(correctedText)
+        
+
     def exportToTextFile(self):
         fileName = "SavedTextFile/" + str(self.textForFile.toPlainText())
         userText = str(self.userInputText.toPlainText())
         self.files.createTextFile(fileName, userText)
+        
+    def copyToClipBoard(self, text):
+        QApplication.clipboard().setText(text)
+
 
 import sys
 app = QApplication([])
