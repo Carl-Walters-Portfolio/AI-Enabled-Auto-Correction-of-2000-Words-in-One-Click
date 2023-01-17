@@ -4,10 +4,9 @@ API Key
 First make an account on https://openai.com/api/ then create an API key. 
 You will need to add thet API key to api.py
 
-
 The following pictures demonstrate the app's ability to correct the grammar and spellings of up to 2000 words at a time.
 
-This image illustrates bad spelling which will be sent to the OpenAI API.
+This image illustrates incorrect spelling which will be sent to the OpenAI API.
 <img width="1064" alt="1, Incorrect spellings and grammar" src="https://user-images.githubusercontent.com/55022840/212969685-5638fcf2-9f40-45df-8cbe-1ddc1470bbbc.png">
 
 The API has returned the text with corrected grammar and spellings. Additionally, it automatically copies the returned text to the clipboard to save having to manually copy the text.
