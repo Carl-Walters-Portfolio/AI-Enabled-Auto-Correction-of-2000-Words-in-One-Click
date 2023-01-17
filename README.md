@@ -1,6 +1,7 @@
 AI-Enabled-Auto-Correction-of-2000-Words-in-One-Click
 
 API Key
+
 First make an account on https://openai.com/api/ then create an API key. 
 You will need to add thet API key to api.py
 
